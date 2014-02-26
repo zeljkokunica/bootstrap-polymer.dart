@@ -1,5 +1,6 @@
-import 'package:polymer/polymer.dart';
+library bs_polymer_element;
 import 'dart:html';
+import 'package:polymer/polymer.dart';
 
 class BsPolymerElement extends PolymerElement with Observable {
   //This enables the styling via bootstrap.css
@@ -32,7 +33,6 @@ class BsPolymerElement extends PolymerElement with Observable {
         return null;
       }
     }
-  
   
   BsPolymerElement.created() : super.created() {
   }

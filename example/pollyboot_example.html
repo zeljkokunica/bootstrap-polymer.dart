@@ -5,31 +5,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sample app</title>
-<link rel="stylesheet" href="test_polymer.css">
 <link rel="stylesheet" href="packages/bootjack/css/bootstrap.min.css">
 
-<link rel="import" href="bootstrap/dropdown.html">
+<link rel="import" href="../lib/bootstrap/dropdown.html">
 <script src="packages/browser/dart.js"></script>
 </head>
 <body>
 	<h1>Test polymer</h1>
 
 	<ul id="tabs" class="nav nav-tabs">
-		<li class="active"><a href="#dropdown" data-toggle="tab">Dropdown</a></li>
+		<li class="active"><a href="#dropdownTab" data-toggle="tab">Dropdown example</a></li>
 		<li><a href="#home" data-toggle="tab">Home</a></li>
 		<li><a href="#messages" data-toggle="tab">Messages</a></li>
 		<li><a href="#settings" data-toggle="tab">Settings</a></li>
 	</ul>
 
 	<div class="tab-content">
-		<div class="tab-pane active" id="dropdown">
-		  <bs-dropdown id="testDropdown" label="Opcije"></bs-dropdown>
+		<div class="tab-pane active" id="dropdownTab">
+		  <bs-dropdown id="optionsDrowDown" label="Options"></bs-dropdown>
 		</div>
 		<div class="tab-pane " id="home">(Home Content)</div>
 		<div class="tab-pane" id="messages">(Message Content)</div>
 		<div class="tab-pane" id="settings">(Setting Content)</div>
 	</div>
 
-	<script type="application/dart" src="app.dart"></script>
+	<script type="application/dart" src="pollyboot_example.dart"></script>
 </body>
 </html>
