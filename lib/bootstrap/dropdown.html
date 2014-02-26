@@ -2,11 +2,12 @@
 <template>
 	<div class="dropdown" >
 		<button class="{{buttonType}} dropdown-toggle" data-toggle="dropdown">{{label}} <span class="caret"></span>
+		<template if="${{isSplit}}"><span class="sr-only">Toggle Dropdown</span></template>
 		</button>
 		<ul class="dropdown-menu">
 	    <template repeat="{{option in options | enumerate}}">
 	     <template if="{{option.value.type == 'item'}}"> 
-		    <li data-item-index="{{option.index}}"><a href="#" ><span class="glyphicon {{option.value.glyph}}">&nbsp;{{option.value.label}}</span></a></li>
+		    <li class="{{option.value.enabledClass}}" data-item-index="{{option.index}}"><a href="#" ><span class="glyphicon {{option.value.glyph}}">&nbsp;</span>{{option.value.label}}</a></li>
 		   </template>
 		   <template if="{{option.value.type == 'divider'}}"> 
         <li class="divider"></li>
