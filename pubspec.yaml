@@ -1,8 +1,11 @@
-name: test_polymer
-description: A sample Polymer application
+name: pollyboot
+version: 0.0.1
+author: Željko Kunica <zeljko.kunica@gmail.com>
+description: Bootstrap components made in polymer
+homepage: https://github.com/zeljkokunica/bootstrap-polymer.dart
 dependencies:
     polymer: any
     bootjack: any
-transformers:
-- polymer:
-    entry_points: web/test_polymer.html
+dev_dependencies:
+  unittest: any
+    
