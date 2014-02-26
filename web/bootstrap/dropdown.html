@@ -1,0 +1,15 @@
+<polymer-element name="bs-dropdown" attributes="label">
+<template>
+	<div class="dropdown" >
+		<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" >{{label}} <span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+	    <template repeat="{{option in options | enumerate}}"> 
+		   <li data-item-index="{{option.index}}"><a href="#" ><span class="glyphicon {{option.value.glyph}}">&nbsp;{{option.value.label}}</span></a></li>
+		  </template>
+		</ul>
+	</div>
+</template> 
+<script type="application/dart" src="dropdown.dart"></script> 
+</polymer-element>
+

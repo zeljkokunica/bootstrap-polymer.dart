@@ -1,0 +1,8 @@
+name: test_polymer
+description: A sample Polymer application
+dependencies:
+    polymer: any
+    bootjack: any
+transformers:
+- polymer:
+    entry_points: web/test_polymer.html
