@@ -1,7 +1,7 @@
 import "package:polymer/polymer.dart";
 import "package:bootjack/bootjack.dart";
 import "dart:html";
-import "../lib/pollyboot.dart";
+import "package:polyboot/polyboot.dart";
 
 void main() {
   initPolymer().run(init);
