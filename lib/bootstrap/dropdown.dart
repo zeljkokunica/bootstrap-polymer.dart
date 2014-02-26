@@ -1,6 +1,7 @@
 library bs_dropdown;
 import 'package:polymer/polymer.dart';
 import 'polymer_base.dart';
+import 'constants.dart';
 import 'dart:html';
 
 class DropDownOption {
@@ -20,9 +21,26 @@ class DropDownOption {
 @CustomTag('bs-dropdown')
 class BsDropDown extends BsPolymerElement with Observable {
   @published List<DropDownOption> options = toObservable([]);
-  @published String label = "Button";
-  @published String buttonType = "btn btn-default";
+  @published String buttonLabel = "Button";
+  String _buttonType = "btn btn-default";
+  String _buttonSize = "";
+  @published String buttonClass = "btn btn-default";
+  @published String buttonGlyph = "caret";
   @published bool isSplit = false;
+  
+  void _refreshButtonClass() {
+    buttonClass = "${_buttonType} ${_buttonSize}";
+  }
+  
+  set buttonType(String value) {
+    _buttonType = Constants.getValidButtonType(value);
+    _refreshButtonClass();
+  }
+  
+  set buttonSize(String value) {
+      _buttonSize = Constants.getValidButtonSize(value);
+      _refreshButtonClass();
+  }
   
   BsDropDown.created() : super.created() {
     onClick.listen(onItemClicked);

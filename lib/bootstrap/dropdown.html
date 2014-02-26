@@ -1,7 +1,7 @@
-<polymer-element name="bs-dropdown" attributes="label">
+<polymer-element name="bs-dropdown" attributes="buttonLabel">
 <template>
 	<div class="dropdown" >
-		<button class="{{buttonType}} dropdown-toggle" data-toggle="dropdown">{{label}} <span class="caret"></span>
+		<button class="{{buttonClass}} dropdown-toggle" data-toggle="dropdown">{{buttonLabel}} <span class="{{buttonGlyph}}"></span>
 		<template if="${{isSplit}}"><span class="sr-only">Toggle Dropdown</span></template>
 		</button>
 		<ul class="dropdown-menu">

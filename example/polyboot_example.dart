@@ -30,9 +30,9 @@ void init() {
   optionsDropDown.addDivider();
   optionsDropDown.addOption("Third", "glyphicon-wrench", () => print("selected 3"));
   optionsDropDown.addHeader("Other stuff");
-  
+  int defaultOptionsCount = optionsDropDown.options.length;
   removeButtonEnabledCheck = () {
-      if (optionsDropDown.options.length < 7) {
+      if (optionsDropDown.options.length <= defaultOptionsCount) {
         removeItem.enabled = false;
       }
       else {
@@ -42,10 +42,10 @@ void init() {
     
   removeButtonEnabledCheck();
   
-  
   BsDropDown otherDropDown = new Element.tag("bs-dropdown") as BsDropDown
-      ..label = "Other options"
+      ..buttonLabel = "Other options"
       ..buttonType = Constants.BUTTON_TYPE_WARNING
+      ..buttonSize = Constants.BUTTON_SIZE_SMALL
       ..isSplit = true;
   otherDropDown.addOption("Other", "glyphicon-search", () => print("other"));
   
