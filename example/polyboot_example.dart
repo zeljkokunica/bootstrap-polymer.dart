@@ -12,6 +12,7 @@ void init() {
   Tab.use();
   
   BsDropDown optionsDropDown = querySelector("#optionsDrowDown");
+  optionsDropDown.addHeader("Main stuff");
   optionsDropDown.addOption("Add", "glyphicon-plus", () {
     optionsDropDown.addOption("Added", "glyphicon-edit", () => print("I was added!"));
   });
@@ -20,7 +21,9 @@ void init() {
       optionsDropDown.removeOption(optionsDropDown.options.last);
     }
   });
+  optionsDropDown.addDivider();
   optionsDropDown.addOption("Third", "glyphicon-wrench", () => print("selected 3"));
+  optionsDropDown.addHeader("Other stuff");
   
   BsDropDown otherDropDown = new Element.tag("bs-dropdown") as BsDropDown
       ..label = "Other options";

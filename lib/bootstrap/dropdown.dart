@@ -4,6 +4,7 @@ import 'polymer_base.dart';
 import 'dart:html';
 
 class DropDownOption {
+  String type;
   String label;
   String glyph;
   Function action;
@@ -20,11 +21,27 @@ class BsDropDown extends BsPolymerElement with Observable {
   
   DropDownOption addOption(String label, String glyph, Function action) {
     DropDownOption option = new DropDownOption()
+      ..type = "item"
       ..label = label
       ..glyph = (glyph != null ? glyph : "")
       ..action = action;
     options.add(option);
     return option;
+  }
+  
+  DropDownOption addDivider() {
+      DropDownOption option = new DropDownOption()
+        ..type = "divider";
+      options.add(option);
+      return option;
+  }
+  
+  DropDownOption addHeader(String label) {
+      DropDownOption option = new DropDownOption()
+        ..type = "header"
+        ..label = label;
+      options.add(option);
+      return option;
   }
   
   bool removeOption(DropDownOption option) {
