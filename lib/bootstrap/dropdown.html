@@ -1,7 +1,7 @@
 <polymer-element name="bs-dropdown" attributes="label">
 <template>
 	<div class="dropdown" >
-		<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" >{{label}} <span class="caret"></span>
+		<button class="{{buttonType}} dropdown-toggle" data-toggle="dropdown">{{label}} <span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu">
 	    <template repeat="{{option in options | enumerate}}">

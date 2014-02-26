@@ -12,6 +12,7 @@ void init() {
   Tab.use();
   
   BsDropDown optionsDropDown = querySelector("#optionsDrowDown");
+  optionsDropDown.buttonType = Constants.BUTTON_TYPE_INFO;
   optionsDropDown.addHeader("Main stuff");
   optionsDropDown.addOption("Add", "glyphicon-plus", () {
     optionsDropDown.addOption("Added", "glyphicon-edit", () => print("I was added!"));
@@ -26,7 +27,8 @@ void init() {
   optionsDropDown.addHeader("Other stuff");
   
   BsDropDown otherDropDown = new Element.tag("bs-dropdown") as BsDropDown
-      ..label = "Other options";
+      ..label = "Other options"
+      ..buttonType = Constants.BUTTON_TYPE_WARNING;
   otherDropDown.addOption("Other", "glyphicon-search", () => print("other"));
   
   querySelector("#dropdownTab").children.add(otherDropDown);

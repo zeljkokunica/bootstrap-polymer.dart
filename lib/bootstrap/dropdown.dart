@@ -14,6 +14,7 @@ class DropDownOption {
 class BsDropDown extends BsPolymerElement with Observable {
   @published List<DropDownOption> options = toObservable([]);
   @published String label = "Button";
+  @published String buttonType = "btn btn-default";
   
   BsDropDown.created() : super.created() {
     onClick.listen(onItemClicked);
